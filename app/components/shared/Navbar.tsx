@@ -43,14 +43,33 @@ export default function Navbar() {
               shop by category
             </span>
           </div>
-          <div>Collections</div>
-          <div>Flash Deals</div>
-          <div>New Arrivals</div>
-          <div>Bundle Products</div>
+          <div className="flex gap-[20px] items-center">
+            <div>Our Collections</div>
+            <div className="flex">
+              <div>
+                <img src="/icon-flash.png" alt="" />
+              </div>
+              <span>Flash Deals</span>
+            </div>
+            <div>New Arrivals</div>
+            <div className="text-[#F44A22] font-semibold text-[16px]">
+              Bundle Products
+            </div>
+          </div>
         </div>
         <div className="flex justify-between gap-[20px]">
-          <div>Corporate Inqueries</div>
-          <div>Track Your Order</div>
+          <div className="">
+            <div>
+              <img src="/icon-corporate.png" alt="" />
+            </div>
+            <span>Corporate Enquiries</span>
+          </div>
+          <div className="flex">
+            <div>
+              <img src="/icon-location.png" alt="" />
+            </div>
+            <span>Track Your Order</span>
+          </div>
         </div>
       </div>
     </>
