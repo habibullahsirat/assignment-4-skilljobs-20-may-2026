@@ -1,20 +1,3 @@
-// export default function Hero() {
-//   return (
-//     <>
-//       <div className="w-[1280px] h-[458px] bg-[url(/banner1.jpg)] rounded-[12px] relative">
-//         <h1 className="text-[68px] font-[700] absolute text-white">
-//           Redefine Your Everyday Style
-//         </h1>
-//         <p className="text-[24px] font-[400]">
-//           Discover chic tops, comfy loungewear, trendy bottoms, and timeless
-//           accessories — all in one place.
-//         </p>
-//         <button className="bg-[#161616] text-white">Explore Collection</button>
-//       </div>
-//     </>
-//   );
-// }
-
 export default function Hero() {
   return (
     <section className="flex justify-center mt-10">
