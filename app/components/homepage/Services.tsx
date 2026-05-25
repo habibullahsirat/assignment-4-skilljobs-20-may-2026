@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <div className="flex justify-between gap-[10px] m-[16px] px-[8px] py-[16px]">
+    <div className="flex justify-between gap-[10px] w-[80%] items-center ">
       <div>
         <div className="flex justify-between gap-[20px]">
           <div>
