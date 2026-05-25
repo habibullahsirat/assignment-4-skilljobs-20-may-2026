@@ -1,16 +1,20 @@
 export default function Services() {
   return (
-    <div className="flex justify-between gap-[10px]">
+    <div className="flex justify-between gap-[10px] m-[16px] px-[8px] py-[16px]">
       <div>
-        <div className="flex justify-between gap-6">
+        <div className="flex justify-between gap-[20px]">
           <div>
             <img src="/icon-delivery.png" alt="" />
           </div>
           <div>
-            <h2>Fast, Free Shipping</h2>
-            <p>On order over BDT-2000</p>
+            <h2 className="font-[600] text-[16px]">Fast, Free Shipping</h2>
+            <p className="text-[#A9AAAC] text-[14px] font-[400]">
+              On order over BDT-2000
+            </p>
           </div>
-          <div className="border-r-2 border-r-gray-400"></div>
+          <div className="h-full">
+            <div className="border-r-2 border-r-gray-400"></div>
+          </div>
         </div>
       </div>
 
