@@ -108,9 +108,9 @@ const products: Product[] = [
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-white rounded-sm overflow-hidden flex flex-col border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="bg-white rounded-sm overflow-hidden flex flex-col  shadow-sm hover:shadow-lg hover:border-white-5 hover:p-2 hover:rounded-lg transition-shadow duration-1200 h-[463.12px] w-[302px]">
       {/* Image */}
-      <div className="relative overflow-hidden bg-gray-50 aspect-[3/4]">
+      <div className="relative overflow-hidden bg-gray-50 aspect-[3/4] rounded-lg hover:rounded-lg">
         <img
           src={product.img}
           alt={product.name}
