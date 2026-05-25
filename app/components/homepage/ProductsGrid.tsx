@@ -11,7 +11,7 @@ const products: Product[] = [
   {
     id: 1,
     name: "Buttons Cotton Top",
-    img: "img1.png",
+    img: "/pg1.jpg",
     colors: ["#C8A882", "#E8DDD0"],
     price: 1090,
     original: 2000,
@@ -19,7 +19,7 @@ const products: Product[] = [
   {
     id: 2,
     name: "Wool Midi Coat",
-    img: "img2.png",
+    img: "/pg2.jpg",
     colors: ["#3B3B2F", "#6B5D3F"],
     price: 1590,
     original: 2300,
@@ -27,7 +27,7 @@ const products: Product[] = [
   {
     id: 3,
     name: "Lyocell Wrap Top",
-    img: "img3.png",
+    img: "/pg3.jpg",
     colors: ["#4A4A35", "#E0D8CC"],
     price: 4090,
     original: 5000,
@@ -35,7 +35,7 @@ const products: Product[] = [
   {
     id: 4,
     name: "Leather Shopper Bag With Stitching",
-    img: "img4.png",
+    img: "/pg4.jpg",
     colors: ["#DDD0C0", "#CC44CC"],
     price: 7090,
     original: 10000,
@@ -43,7 +43,7 @@ const products: Product[] = [
   {
     id: 5,
     name: "Leather Shopper Bag With Stitching",
-    img: "img5.png",
+    img: "pg4.jpg",
     colors: ["#DDD0C0", "#CC44CC"],
     price: 7090,
     original: 10000,
@@ -51,7 +51,7 @@ const products: Product[] = [
   {
     id: 6,
     name: "Lyocell Wrap Top",
-    img: "img6.png",
+    img: "pg3.jpg",
     colors: ["#4A4A35", "#E0D8CC"],
     price: 4090,
     original: 5000,
@@ -59,7 +59,7 @@ const products: Product[] = [
   {
     id: 7,
     name: "Lyocell Wrap Top",
-    img: "img7.png",
+    img: "pg3.jpg",
     colors: ["#4A4A35", "#E0D8CC"],
     price: 4090,
     original: 5000,
@@ -67,7 +67,7 @@ const products: Product[] = [
   {
     id: 8,
     name: "Leather Shopper Bag With Stitching",
-    img: "img8.png",
+    img: "pg4.jpg",
     colors: ["#DDD0C0", "#CC44CC"],
     price: 7090,
     original: 10000,
@@ -75,7 +75,7 @@ const products: Product[] = [
   {
     id: 9,
     name: "Leather Shopper Bag With Stitching",
-    img: "img9.png",
+    img: "pg4.jpg",
     colors: ["#DDD0C0", "#CC44CC"],
     price: 7090,
     original: 10000,
@@ -83,7 +83,7 @@ const products: Product[] = [
   {
     id: 10,
     name: "Buttons Cotton Top",
-    img: "img10.png",
+    img: "pg1.jpg",
     colors: ["#C8A882", "#E8DDD0"],
     price: 1090,
     original: 2000,
@@ -91,7 +91,7 @@ const products: Product[] = [
   {
     id: 11,
     name: "Lyocell Wrap Top",
-    img: "img11.png",
+    img: "pg3.jpg",
     colors: ["#4A4A35", "#E0D8CC"],
     price: 4090,
     original: 5000,
@@ -99,103 +99,7 @@ const products: Product[] = [
   {
     id: 12,
     name: "Leather Shopper Bag With Stitching",
-    img: "img12.png",
-    colors: ["#DDD0C0", "#CC44CC"],
-    price: 7090,
-    original: 10000,
-  },
-  {
-    id: 13,
-    name: "Buttons Cotton Top",
-    img: "img13.png",
-    colors: ["#C8A882", "#E8DDD0"],
-    price: 1090,
-    original: 2000,
-  },
-  {
-    id: 14,
-    name: "Wool Midi Coat",
-    img: "img14.png",
-    colors: ["#3B3B2F", "#6B5D3F"],
-    price: 1590,
-    original: 2300,
-  },
-  {
-    id: 15,
-    name: "Lyocell Wrap Top",
-    img: "img15.png",
-    colors: ["#4A4A35", "#E0D8CC"],
-    price: 4090,
-    original: 5000,
-  },
-  {
-    id: 16,
-    name: "Leather Shopper Bag With Stitching",
-    img: "img16.png",
-    colors: ["#DDD0C0", "#CC44CC"],
-    price: 7090,
-    original: 10000,
-  },
-  {
-    id: 17,
-    name: "Leather Shopper Bag With Stitching",
-    img: "img17.png",
-    colors: ["#DDD0C0", "#CC44CC"],
-    price: 7090,
-    original: 10000,
-  },
-  {
-    id: 18,
-    name: "Lyocell Wrap Top",
-    img: "img18.png",
-    colors: ["#4A4A35", "#E0D8CC"],
-    price: 4090,
-    original: 5000,
-  },
-  {
-    id: 19,
-    name: "Lyocell Wrap Top",
-    img: "img19.png",
-    colors: ["#4A4A35", "#E0D8CC"],
-    price: 4090,
-    original: 5000,
-  },
-  {
-    id: 20,
-    name: "Leather Shopper Bag With Stitching",
-    img: "img20.png",
-    colors: ["#DDD0C0", "#CC44CC"],
-    price: 7090,
-    original: 10000,
-  },
-  {
-    id: 21,
-    name: "Leather Shopper Bag With Stitching",
-    img: "img21.png",
-    colors: ["#DDD0C0", "#CC44CC"],
-    price: 7090,
-    original: 10000,
-  },
-  {
-    id: 22,
-    name: "Buttons Cotton Top",
-    img: "img22.png",
-    colors: ["#C8A882", "#E8DDD0"],
-    price: 1090,
-    original: 2000,
-  },
-  {
-    id: 23,
-    name: "Lyocell Wrap Top",
-    img: "img23.png",
-    colors: ["#4A4A35", "#E0D8CC"],
-    price: 4090,
-    original: 5000,
-  },
-  {
-    id: 24,
-    name: "Leather Shopper Bag With Stitching",
-    img: "img24.png",
+    img: "pg4.jpg",
     colors: ["#DDD0C0", "#CC44CC"],
     price: 7090,
     original: 10000,
@@ -268,7 +172,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductsGrid() {
   return (
-    <div className="min-h-screen bg-gray-950 p-3 sm:p-4 md:p-6">
+    <div className="min-h-screen p-3 sm:p-4 md:p-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
