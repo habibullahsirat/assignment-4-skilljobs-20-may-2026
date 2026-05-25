@@ -23,8 +23,24 @@ const products = [
 
 export default function CategoryProducts() {
   return (
-    <>
-      <div></div>
-    </>
+    <div className="flex flex-nowrap gap-4 overflow-x-auto">
+      {products.map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col overflow-hidden items-center shrink-0"
+        >
+          {/* Fixed image size */}
+          <div className="w-[140px] h-[140px]">
+            <img
+              src={item.image}
+              alt={item.category}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="mt-2 text-sm text-center">{item.category}</p>
+        </div>
+      ))}
+    </div>
   );
 }
