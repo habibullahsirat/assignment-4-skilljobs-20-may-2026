@@ -38,7 +38,7 @@ export default function FlashDeals() {
     <>
       <div className="flex justify-around ">
         <div>
-          <h1 className="text-[48px]">Flash Deals</h1>
+          <h1 className="text-[42px] font-[700]">Flash Deals</h1>
         </div>
         <div className="flex justify-between gap-[10px] text-center">
           <div>
