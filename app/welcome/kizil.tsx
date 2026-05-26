@@ -2,6 +2,7 @@ import Hero from "../components/homepage/Hero";
 import Services from "../components/homepage/Services";
 import Category from "../components/homepage/Category";
 import CategoryProducts from "../components/homepage/CategoryProducts";
+import FlashDeals from "../components/homepage/FlashDeals";
 import ProductsGrid from "../components/homepage/ProductsGrid";
 
 export function Kizil() {
@@ -11,6 +12,7 @@ export function Kizil() {
       <Services />
       <Category />
       <CategoryProducts />
+      <FlashDeals />
       <ProductsGrid />
     </>
   );
