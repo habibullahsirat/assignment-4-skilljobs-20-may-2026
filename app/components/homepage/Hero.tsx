@@ -16,10 +16,8 @@ export default function Hero() {
           overflow-hidden
         "
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
 
-        {/* Content */}
         <div
           className="
             relative
