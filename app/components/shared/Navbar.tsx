@@ -1,15 +1,12 @@
 export default function Navbar() {
   return (
     <>
-      {/* Top Navbar */}
       <div className="w-full border-b border-gray-200">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
-          {/* Logo */}
+        <div className="max-w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
           <div className="flex justify-center lg:justify-start w-full lg:w-auto">
             <img src="/KIZIL.png" alt="Logo" className="h-10 object-contain" />
           </div>
 
-          {/* Phone Info */}
           <div className="hidden xl:block">
             <img
               src="/Phone-Info.png"
@@ -18,7 +15,6 @@ export default function Navbar() {
             />
           </div>
 
-          {/* Search Bar */}
           <div className="w-full lg:flex-1 lg:max-w-[620px]">
             <div className="flex items-center gap-3 bg-[#F3F3F3] rounded-full px-4 py-3 w-full">
               <img src="/icon-search.png" alt="Search" className="w-4 h-4" />
@@ -59,7 +55,7 @@ export default function Navbar() {
       </div>
 
       <div className="w-full border-b border-gray-200">
-        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
+        <div className="max-w-full mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 w-full xl:w-auto">
             <div className="flex items-center justify-center gap-2 bg-black text-white rounded-md px-5 py-3 cursor-pointer w-full sm:w-fit">
               <img
