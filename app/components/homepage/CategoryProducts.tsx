@@ -23,7 +23,7 @@ const products = [
 
 export default function CategoryProducts() {
   return (
-    <div className="flex flex-nowrap gap-4 overflow-x-auto w-[1280px] h-[387px] items-center">
+    <div className="flex flex-nowrap gap-4 overflow-x-auto w-[1280px] h-[387px] items-center mx-[15%]">
       {products.map((item, index) => (
         <div
           key={index}
