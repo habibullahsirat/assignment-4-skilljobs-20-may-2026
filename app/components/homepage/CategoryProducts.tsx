@@ -23,14 +23,14 @@ const products = [
 
 export default function CategoryProducts() {
   return (
-    <div className="flex flex-nowrap gap-4 overflow-x-auto">
+    <div className="flex flex-nowrap gap-4 overflow-x-auto w-[1280px]">
       {products.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col overflow-hidden items-center shrink-0"
+          className="flex flex-col overflow-hidden items-center shrink-0 rounded-[16px]"
         >
           {/* Fixed image size */}
-          <div className="w-[140px] h-[140px]">
+          <div className="w-[302px] h-[354px]">
             <img
               src={item.image}
               alt={item.category}
