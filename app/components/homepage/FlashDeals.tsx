@@ -42,26 +42,27 @@ export default function FlashDeals() {
         </div>
         <div className="flex justify-between gap-[10px] text-center">
           <div>
-            <div>Days</div>
-            <div>03</div>
+            <div className="text-[12px] font-[600] font-semibold">Days</div>
+            <div className="text-[28px] font-[700]">03</div>
           </div>
           <div>
-            <div>Hours</div>
-            <div>23</div>
+            <div className="text-[12px] font-[600] font-semibold">Hours</div>
+            <div className="text-[28px] font-[700]">23</div>
           </div>
           <div>
-            <div>Minutes</div>
-            <div>19</div>
+            <div className="text-[12px] font-[600] font-semibold">Minutes</div>
+            <div className="text-[28px] font-[700]">19</div>
           </div>
           <div>
-            <div>Seconds</div>
-            <div>56</div>
+            <div className="text-[12px] font-[600] font-semibold">Seconds</div>
+            <div className="text-[28px] font-[700]">56</div>
           </div>
         </div>
         <div>
           <a href="">See All Products</a>
         </div>
       </div>
+      <div></div>
     </>
   );
 }
