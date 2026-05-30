@@ -115,7 +115,7 @@ function ProductDetailsModal({ product, onClose }) {
   return (
     // Backdrop — clicking it closes the modal
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 backdrop-blur-md bg-white/30 bg-opacity-50 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Modal box — stop click from bubbling to backdrop */}
@@ -362,11 +362,11 @@ function ProductDetailsModal({ product, onClose }) {
 // ──────────────────────────────────────────
 function ProductGrid({ onSelectProduct }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 bg-black">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
       {products.map((product) => (
         <div
           key={product.id}
-          className="bg-white border border-black cursor-pointer"
+          className="bg-white border-white rounded-md px-[8px] cursor-pointer"
           onClick={() => onSelectProduct(product)}
         >
           {/* Product Image */}
