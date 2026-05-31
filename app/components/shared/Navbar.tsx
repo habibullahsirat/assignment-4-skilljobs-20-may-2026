@@ -6,7 +6,13 @@ export default function Navbar() {
       <div className="w-full border-b border-gray-200">
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
           <div className="flex justify-center lg:justify-start w-full lg:w-auto">
-            <img src="/KIZIL.png" alt="Logo" className="h-10 object-contain" />
+            <NavLink to="/">
+              <img
+                src="/KIZIL.png"
+                alt="Logo"
+                className="h-10 object-contain"
+              />
+            </NavLink>
           </div>
 
           <div className="hidden xl:block">
@@ -73,7 +79,7 @@ export default function Navbar() {
 
             <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm font-medium">
               <div className="cursor-pointer whitespace-nowrap">
-                <NavLink to="/ourcollections">Our Collections</NavLink>
+                <NavLink to="/our-collections">Our Collections</NavLink>
               </div>
 
               <div className="flex items-center gap-1 cursor-pointer whitespace-nowrap">
@@ -82,7 +88,7 @@ export default function Navbar() {
               </div>
 
               <div className="cursor-pointer whitespace-nowrap">
-                New Arrivals
+                <NavLink to="/new-arrivals">New Arrivals</NavLink>
               </div>
 
               <div className="text-[#F44A22] font-semibold cursor-pointer whitespace-nowrap">
