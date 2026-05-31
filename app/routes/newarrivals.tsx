@@ -1,6 +1,6 @@
 export default function NewArrivals() {
   const categories = [
-    { name: "Bedroom", image: "/bed.png" },
+    { name: "Bedroom", image: "/bed-image.png" },
     { name: "Sofas", image: "/sofa.png" },
     { name: "Office", image: "/office.png" },
     { name: "Storage", image: "/storage.png" },
@@ -36,13 +36,13 @@ export default function NewArrivals() {
 
         {/* Categories */}
         <div className="flex items-center gap-6 mt-8">
-          <button className="w-10 h-10 flex items-center justify-center text-2xl">
-            ←
+          <button className="w-35 h-10 flex items-center justify-center text-2xl">
+            <img src="/icon-left.png" alt="" />
           </button>
 
           {categories.map((item) => (
             <div key={item.name} className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+              <div className="w-40 h-40 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.name}
@@ -54,7 +54,7 @@ export default function NewArrivals() {
           ))}
 
           <button className="w-10 h-10 flex items-center justify-center text-2xl ml-auto">
-            →
+            <img src="/icon-right.png" alt="" />
           </button>
         </div>
 
@@ -242,7 +242,7 @@ export default function NewArrivals() {
                 <div key={index}>
                   <div className="bg-gray-100 aspect-square flex items-center justify-center">
                     <img
-                      src="/bed.png"
+                      src="/bed-image.png"
                       alt="bed"
                       className="w-56 object-contain"
                     />
