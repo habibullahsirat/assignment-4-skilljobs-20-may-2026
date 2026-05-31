@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 export default function Navbar() {
   return (
     <>
@@ -71,7 +73,7 @@ export default function Navbar() {
 
             <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm font-medium">
               <div className="cursor-pointer whitespace-nowrap">
-                Our Collections
+                <NavLink to="/ourcollections">Our Collections</NavLink>
               </div>
 
               <div className="flex items-center gap-1 cursor-pointer whitespace-nowrap">
