@@ -359,18 +359,18 @@ function ProductGrid({ onSelectProduct }) {
     <>
       <div className="w-full flex flex-col items-center justify-center py-16 px-6 min-h-[180px]">
         <h1 className="font-family:'Playfair Display',serif text-5xl font-bold tracking-tight text-center leading-tight mb-4">
-          New Arrivals
+          Our Collections
         </h1>
         <p className="text-[#a8a8a8] text-sm font-light tracking-widest uppercase text-center">
           Find your perfect style from our latest fashion picks
         </p>
       </div>
 
-      <div class="flex items-center justify-between w-full text-xs text-gray-500">
-        <button class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
+      <div className="flex items-center justify-between w-[1280px] mx-[15%] my-[16px] text-xs text-gray-500">
+        <button className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4"
+            className="w-4 h-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -385,10 +385,10 @@ function ProductGrid({ onSelectProduct }) {
           <span>Show Filters</span>
         </button>
 
-        <div class="flex items-center gap-8">
-          <div class="flex items-center gap-2">
+        <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2">
             <span>Show:</span>
-            <button class="font-semibold text-black">12</button>
+            <button className="font-semibold text-black">12</button>
             <button>24</button>
             <button>48</button>
           </div>
