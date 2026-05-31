@@ -366,6 +366,58 @@ function ProductGrid({ onSelectProduct }) {
         </p>
       </div>
 
+      <div class="flex items-center justify-between w-full text-xs text-gray-500">
+        <button class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 6h18M6 12h12M10 18h4"
+            />
+          </svg>
+          <span>Show Filters</span>
+        </button>
+
+        <div class="flex items-center gap-8">
+          <div class="flex items-center gap-2">
+            <span>Show:</span>
+            <button class="font-semibold text-black">12</button>
+            <button>24</button>
+            <button>48</button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span>Sort:</span>
+            <button className="flex items-center gap-1 text-black">
+              <span>Short by latest</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-3 h-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div>Showing 1–28 of 30 results</div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
         {products.map((product) => (
           <div
