@@ -418,41 +418,58 @@ function ProductGrid({ onSelectProduct }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1280px] mx-auto px-4">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white border-white rounded-md px-[8px] cursor-pointer"
+            className="
+        bg-white
+        rounded-md
+        w-full
+        max-w-[302px]
+        min-w-0
+        mx-auto
+        cursor-pointer
+        flex flex-col
+      "
             onClick={() => onSelectProduct(product)}
           >
             {/* Product Image */}
-            <div className="bg-gray-100 aspect-[3/4] overflow-hidden">
+            <div className="w-full aspect-[283.34/289.42] overflow-hidden">
               <img
                 src={product.img}
                 alt={product.name}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                className="
+            w-full
+            h-full
+            object-cover
+            rounded-[7.46px]
+            hover:scale-105
+            transition-transform
+            duration-300
+          "
               />
             </div>
 
             {/* Product Info */}
-            <div className="p-3">
-              <p className="text-sm font-medium text-gray-900 mb-2">
+            <div className="p-3 flex flex-col flex-1">
+              <p className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
                 {product.name}
               </p>
 
               {/* Color Swatches */}
-              <div className="flex gap-1 mb-2">
+              <div className="flex gap-1 mb-2 flex-wrap">
                 {product.colors.map((color, i) => (
                   <span
                     key={i}
-                    className="w-4 h-4 rounded-full border border-gray-300 inline-block"
+                    className="w-4 h-4 rounded-full border border-gray-300"
                     style={{ backgroundColor: color }}
                   />
                 ))}
               </div>
 
               {/* Price */}
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
                 <span className="text-sm font-semibold text-gray-900">
                   ৳ {product.price.toLocaleString()}.00
                 </span>
@@ -463,23 +480,24 @@ function ProductGrid({ onSelectProduct }) {
 
               {/* Add to Cart Button */}
               <button
-                className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white text-sm py-2 px-3 hover:bg-gray-700 transition-colors"
-                onClick={(e) => e.stopPropagation()} // prevent card click from firing
+                className="
+            mt-auto
+            w-full
+            flex
+            items-center
+            justify-center
+            gap-2
+            bg-gray-900
+            text-white
+            text-sm
+            py-2
+            px-3
+            hover:bg-gray-700
+            transition-colors
+            rounded-md
+          "
+                onClick={(e) => e.stopPropagation()}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
                 Add To Cart
               </button>
             </div>
