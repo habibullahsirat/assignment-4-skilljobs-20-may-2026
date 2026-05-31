@@ -356,74 +356,118 @@ function ProductDetailsModal({ product, onClose }) {
 
 function ProductGrid({ onSelectProduct }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="bg-white border-white rounded-md px-[8px] cursor-pointer"
-          onClick={() => onSelectProduct(product)}
-        >
-          {/* Product Image */}
-          <div className="bg-gray-100 aspect-[3/4] overflow-hidden">
-            <img
-              src={product.img}
-              alt={product.name}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+    <>
+      <div className="w-full flex flex-col items-center justify-center py-16 px-6 min-h-[180px]">
+        <h1 className="font-family:'Playfair Display',serif text-5xl font-bold tracking-tight text-center leading-tight mb-4">
+          New Arrivals
+        </h1>
+        <p className="text-[#a8a8a8] text-sm font-light tracking-widest uppercase text-center">
+          Find your perfect style from our latest fashion picks
+        </p>
+      </div>
 
-          {/* Product Info */}
-          <div className="p-3">
-            <p className="text-sm font-medium text-gray-900 mb-2">
-              {product.name}
-            </p>
-
-            {/* Color Swatches */}
-            <div className="flex gap-1 mb-2">
-              {product.colors.map((color, i) => (
-                <span
-                  key={i}
-                  className="w-4 h-4 rounded-full border border-gray-300 inline-block"
-                  style={{ backgroundColor: color }}
-                />
-              ))}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white border-white rounded-md px-[8px] cursor-pointer"
+            onClick={() => onSelectProduct(product)}
+          >
+            {/* Product Image */}
+            <div className="bg-gray-100 aspect-[3/4] overflow-hidden">
+              <img
+                src={product.img}
+                alt={product.name}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
 
-            {/* Price */}
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-sm font-semibold text-gray-900">
-                ৳ {product.price.toLocaleString()}.00
-              </span>
-              <span className="text-xs text-gray-400 line-through">
-                ৳ {product.original.toLocaleString()}.00
-              </span>
-            </div>
+            {/* Product Info */}
+            <div className="p-3">
+              <p className="text-sm font-medium text-gray-900 mb-2">
+                {product.name}
+              </p>
 
-            {/* Add to Cart Button */}
-            <button
-              className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white text-sm py-2 px-3 hover:bg-gray-700 transition-colors"
-              onClick={(e) => e.stopPropagation()} // prevent card click from firing
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+              {/* Color Swatches */}
+              <div className="flex gap-1 mb-2">
+                {product.colors.map((color, i) => (
+                  <span
+                    key={i}
+                    className="w-4 h-4 rounded-full border border-gray-300 inline-block"
+                    style={{ backgroundColor: color }}
+                  />
+                ))}
+              </div>
+
+              {/* Price */}
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-sm font-semibold text-gray-900">
+                  ৳ {product.price.toLocaleString()}.00
+                </span>
+                <span className="text-xs text-gray-400 line-through">
+                  ৳ {product.original.toLocaleString()}.00
+                </span>
+              </div>
+
+              {/* Add to Cart Button */}
+              <button
+                className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white text-sm py-2 px-3 hover:bg-gray-700 transition-colors"
+                onClick={(e) => e.stopPropagation()} // prevent card click from firing
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              Add To Cart
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                Add To Cart
+              </button>
+            </div>
           </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center items-center py-8">
+        <div className="flex items-center gap-3">
+          <button className="w-10 h-10 rounded bg-black text-white flex items-center justify-center text-sm font-medium">
+            1
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
+            2
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
+            3
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center hover:bg-gray-200 transition">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 }
 
