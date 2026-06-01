@@ -1,4 +1,4 @@
-export default function NewArrivals() {
+export default function NewArrival() {
   const categories = [
     { name: "Bedroom", image: "/bed-image.png" },
     { name: "Sofas", image: "/sofa.png" },

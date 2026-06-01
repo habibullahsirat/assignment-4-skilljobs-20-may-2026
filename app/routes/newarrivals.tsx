@@ -1,4 +1,4 @@
-import NewArrivals from "../components/newarrivals/NewArrivals";
+import NewArrival from "../components/newarrivals/NewArrivals";
 
 export function meta() {
   return [
@@ -7,6 +7,6 @@ export function meta() {
   ];
 }
 
-export default function OurCollections() {
-  return <NewArrivals />;
+export default function NewArrivals() {
+  return <NewArrival />;
 }
