@@ -6,7 +6,9 @@ export default function PopularBundles() {
         <p className="text-[16px] font-[400]">
           Save more with our best-selling style combos.
         </p>
-        <button>See All Bundles</button>
+        <button className="rounded-[5px] border border-black text-[16px] font-[400] px-[24px] py-[10px] mt-[20px]">
+          See All Bundles
+        </button>
       </div>
     </>
   );
