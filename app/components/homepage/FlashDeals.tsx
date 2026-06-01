@@ -44,7 +44,7 @@ export default function FlashDeals() {
   );
   return (
     <>
-      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-4">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-4 mt-[50px]">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 w-full min-h-[50px]">
           {/* Flash Deals Title */}
           <h2 className="font-['Urbanist'] font-bold text-[42px] leading-[50px] text-black select-none">
@@ -147,10 +147,6 @@ export default function FlashDeals() {
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                {/* "X Left" Badge */}
-                <div className="absolute bottom-3 left-3 bg-[#FFF0ED] text-[#FF5F39] text-[11px] font-['Poppins'] font-semibold px-2 py-0.5 rounded-[4px]">
-                  {/* {product.left} */}
-                </div>
               </div>
 
               {/* Product Meta Section */}

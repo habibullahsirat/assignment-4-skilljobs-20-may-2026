@@ -44,7 +44,7 @@ export default function PopularBundles() {
         </button>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-6">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-6 mb-[50px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.map((product) => (
             <div
