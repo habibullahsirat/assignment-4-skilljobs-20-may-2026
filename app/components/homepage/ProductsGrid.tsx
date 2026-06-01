@@ -323,8 +323,8 @@ function ProductGrid({ onSelectProduct }) {
   return (
     <>
       <div className="text-center mt-12 mb-12">
-        <h1 className="text-[42px] font-bold">New Arrivals</h1>
-        <p className="text-base font-normal">
+        <h1 className="text-[42px] font-bold font-['Urbanist]">New Arrivals</h1>
+        <p className="text-base font-normal font-['Poppins']">
           Be the first to wear the latest trends
         </p>
       </div>
@@ -345,15 +345,15 @@ function ProductGrid({ onSelectProduct }) {
 
               <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                 <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  ❤️
+                  <img src="/icon-heart2.png" alt="" />
                 </button>
 
                 <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  👁️
+                  <img src="icon-eye.png" alt="" />
                 </button>
 
                 <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  ↗
+                  <img src="icon-share.png" alt="" />
                 </button>
               </div>
             </div>

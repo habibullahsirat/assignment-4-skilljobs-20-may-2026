@@ -67,7 +67,7 @@ export default function FlashDeals() {
                 </div>
 
                 {/* Semicolon (Colon 1) */}
-                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto mb-[2px]">
+                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto  ">
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
