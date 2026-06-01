@@ -38,7 +38,9 @@ export default function TopPick() {
               />
             </div>
 
-            <p className="mt-2 text-sm text-center">{item.category}</p>
+            <p className="mt-2 text-[18px] font-[600] font-semibold text-center">
+              {item.category}
+            </p>
           </div>
         ))}
       </div>
