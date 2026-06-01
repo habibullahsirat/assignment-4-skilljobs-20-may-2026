@@ -21,7 +21,7 @@ export default function TopPick() {
   return (
     <>
       <div className="text-center text-[42px] font-[700] font-bold mt-[50px] mb-[50px]">
-        <h1>Top Pick of the Season</h1>
+        <h1 className="font-['Urbanist']">Top Pick of the Season</h1>
       </div>
       <div className="flex flex-nowrap gap-4 overflow-x-auto w-[1280px] h-[387px] items-center mx-[15%] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {products.map((item, index) => (
