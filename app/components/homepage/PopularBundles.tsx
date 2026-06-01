@@ -82,7 +82,6 @@ export default function PopularBundles() {
                 </div>
               </div>
 
-              {/* Add To Cart Interactive Element */}
               <button className="w-full h-[40px] mt-auto bg-[#1A1A1A] hover:bg-black text-white font-['Poppins'] font-medium text-[13px] flex items-center justify-center gap-2 rounded-[6px] transition-colors active:scale-[0.98]">
                 Learn More
               </button>
