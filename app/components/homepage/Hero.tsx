@@ -43,12 +43,7 @@ export default function Hero() {
             <img
               src={banner.image}
               alt={`Banner ${banner.id}`}
-              className="
-                                w-full
-                                h-full
-                                object-cover
-                                rounded-[12px]
-                            "
+              className="w-full h-full object-cover rounded-[12px]"
             />
           </div>
         ))}

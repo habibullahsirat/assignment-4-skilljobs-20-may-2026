@@ -84,7 +84,8 @@ export default function Navbar() {
 
               <div className="flex items-center gap-1 cursor-pointer whitespace-nowrap">
                 <img src="/icon-flash.png" alt="Flash" className="w-4 h-4" />
-                <span>Flash Deals</span>
+                {/* <span>Flash Deals</span> */}
+                <NavLink to="/flash-deals">Flash Deals</NavLink>
               </div>
 
               <div className="cursor-pointer whitespace-nowrap">

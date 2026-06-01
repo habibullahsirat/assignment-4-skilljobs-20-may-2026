@@ -356,74 +356,188 @@ function ProductDetailsModal({ product, onClose }) {
 
 function ProductGrid({ onSelectProduct }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 max-w-[1280px] mx-[15%]">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="bg-white border-white rounded-md px-[8px] cursor-pointer"
-          onClick={() => onSelectProduct(product)}
-        >
-          {/* Product Image */}
-          <div className="bg-gray-100 aspect-[3/4] overflow-hidden">
-            <img
-              src={product.img}
-              alt={product.name}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+    <>
+      <div className="w-full flex flex-col items-center justify-center py-16 px-6 min-h-[180px]">
+        <h1 className="font-family:'Playfair Display',serif text-5xl font-bold tracking-tight text-center leading-tight mb-4">
+          Our Collections
+        </h1>
+        <p className="text-[#a8a8a8] text-sm font-light tracking-widest uppercase text-center">
+          Find your perfect style from our latest fashion picks
+        </p>
+      </div>
+
+      <div className="flex items-center justify-between w-[1280px] mx-[15%] my-[16px] text-xs text-gray-500">
+        <button className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 6h18M6 12h12M10 18h4"
             />
+          </svg>
+          <span>Show Filters</span>
+        </button>
+
+        <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2">
+            <span>Show:</span>
+            <button className="font-semibold text-black">12</button>
+            <button>24</button>
+            <button>48</button>
           </div>
 
-          {/* Product Info */}
-          <div className="p-3">
-            <p className="text-sm font-medium text-gray-900 mb-2">
-              {product.name}
-            </p>
-
-            {/* Color Swatches */}
-            <div className="flex gap-1 mb-2">
-              {product.colors.map((color, i) => (
-                <span
-                  key={i}
-                  className="w-4 h-4 rounded-full border border-gray-300 inline-block"
-                  style={{ backgroundColor: color }}
-                />
-              ))}
-            </div>
-
-            {/* Price */}
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-sm font-semibold text-gray-900">
-                ৳ {product.price.toLocaleString()}.00
-              </span>
-              <span className="text-xs text-gray-400 line-through">
-                ৳ {product.original.toLocaleString()}.00
-              </span>
-            </div>
-
-            {/* Add to Cart Button */}
-            <button
-              className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white text-sm py-2 px-3 hover:bg-gray-700 transition-colors"
-              onClick={(e) => e.stopPropagation()} // prevent card click from firing
-            >
+          <div className="flex items-center gap-2">
+            <span>Sort:</span>
+            <button className="flex items-center gap-1 text-black">
+              <span>Short by latest</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
+                className="w-3 h-3"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
                 />
               </svg>
-              Add To Cart
             </button>
           </div>
+
+          <div>Showing 1–28 of 30 results</div>
         </div>
-      ))}
-    </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1280px] mx-auto px-4">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="
+        bg-white
+        rounded-md
+        w-full
+        max-w-[302px]
+        min-w-0
+        mx-auto
+        cursor-pointer
+        flex flex-col
+      "
+            onClick={() => onSelectProduct(product)}
+          >
+            {/* Product Image */}
+            <div className="w-full aspect-[283.34/289.42] overflow-hidden">
+              <img
+                src={product.img}
+                alt={product.name}
+                className="
+            w-full
+            h-full
+            object-cover
+            rounded-[7.46px]
+            hover:scale-105
+            transition-transform
+            duration-300
+          "
+              />
+            </div>
+
+            {/* Product Info */}
+            <div className="p-3 flex flex-col flex-1">
+              <p className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
+                {product.name}
+              </p>
+
+              {/* Color Swatches */}
+              <div className="flex gap-1 mb-2 flex-wrap">
+                {product.colors.map((color, i) => (
+                  <span
+                    key={i}
+                    className="w-4 h-4 rounded-full border border-gray-300"
+                    style={{ backgroundColor: color }}
+                  />
+                ))}
+              </div>
+
+              {/* Price */}
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
+                <span className="text-sm font-semibold text-gray-900">
+                  ৳ {product.price.toLocaleString()}.00
+                </span>
+                <span className="text-xs text-gray-400 line-through">
+                  ৳ {product.original.toLocaleString()}.00
+                </span>
+              </div>
+
+              {/* Add to Cart Button */}
+              <button
+                className="
+            mt-auto
+            w-full
+            flex
+            items-center
+            justify-center
+            gap-2
+            bg-gray-900
+            text-white
+            text-sm
+            py-2
+            px-3
+            hover:bg-gray-700
+            transition-colors
+            rounded-md
+          "
+                onClick={(e) => e.stopPropagation()}
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center items-center py-8">
+        <div className="flex items-center gap-3">
+          <button className="w-10 h-10 rounded bg-black text-white flex items-center justify-center text-sm font-medium">
+            1
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
+            2
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
+            3
+          </button>
+
+          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center hover:bg-gray-200 transition">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 
