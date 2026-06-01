@@ -4,6 +4,7 @@ import Category from "../components/homepage/Category";
 import CategoryProducts from "../components/homepage/CategoryProducts";
 import FlashDeals from "../components/homepage/FlashDeals";
 import ProductsGrid from "../components/homepage/ProductsGrid";
+import TopPick from "../components/homepage/TopPick";
 
 export function Kizil() {
   return (
@@ -14,6 +15,7 @@ export function Kizil() {
       <CategoryProducts />
       <FlashDeals />
       <ProductsGrid />
+      <TopPick />
     </>
   );
 }
