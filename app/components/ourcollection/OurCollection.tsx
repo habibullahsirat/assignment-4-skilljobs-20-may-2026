@@ -366,7 +366,7 @@ function ProductGrid({ onSelectProduct }) {
         </p>
       </div>
 
-      <div className="flex gap-[12px] mx-[15%] mb-[90px]">
+      <div className="flex gap-[12px] mx-[15%] mb-[50px]">
         <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
           Tops Collection
         </div>
