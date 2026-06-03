@@ -366,6 +366,13 @@ function ProductGrid({ onSelectProduct }) {
         </p>
       </div>
 
+      <div>
+        <div>Tops Collection</div>
+        <div>Bottoms Wear</div>
+        <div>Loungewear</div>
+        <div>Accessories</div>
+      </div>
+
       <div className="flex items-center justify-between w-[1280px] mx-[15%] my-[16px] text-xs text-gray-500">
         <button className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
           <svg
