@@ -433,7 +433,7 @@ function ProductGrid({ onSelectProduct }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1280px] mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1380px] mx-auto px-4">
         {products.map((product) => (
           <div
             key={product.id}
