@@ -366,11 +366,19 @@ function ProductGrid({ onSelectProduct }) {
         </p>
       </div>
 
-      <div>
-        <div>Tops Collection</div>
-        <div>Bottoms Wear</div>
-        <div>Loungewear</div>
-        <div>Accessories</div>
+      <div className="flex gap-[12px]">
+        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
+          Tops Collection
+        </div>
+        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
+          Bottoms Wear
+        </div>
+        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
+          Loungewear
+        </div>
+        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
+          Accessories
+        </div>
       </div>
 
       <div className="flex items-center justify-between w-[1280px] mx-[15%] my-[16px] text-xs text-gray-500">
