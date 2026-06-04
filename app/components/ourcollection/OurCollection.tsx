@@ -495,21 +495,21 @@ function ProductGrid({ onSelectProduct }) {
               {/* Add to Cart Button */}
               <button
                 className="
-            mt-auto
-            w-full
-            flex
-            items-center
-            justify-center
-            gap-2
-            bg-gray-900
-            text-white
-            text-sm
-            py-2
-            px-3
-            hover:bg-gray-700
-            transition-colors
-            rounded-md
-          "
+                mt-auto
+                w-full
+                flex
+                items-center
+                justify-center
+                gap-2
+                bg-gray-900
+                text-white
+                text-sm
+                py-2
+                px-3
+                hover:bg-gray-700
+                transition-colors
+                rounded-md
+              "
                 onClick={(e) => e.stopPropagation()}
               >
                 Add To Cart
