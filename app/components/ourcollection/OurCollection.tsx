@@ -99,9 +99,8 @@ const products = [
   },
 ];
 
-// ──────────────────────────────────────────
 // PRODUCT DETAILS MODAL
-// ──────────────────────────────────────────
+
 function ProductDetailsModal({ product, onClose }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("S");
