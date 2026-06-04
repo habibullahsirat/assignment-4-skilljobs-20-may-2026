@@ -63,8 +63,21 @@ const categories = [
 export default function Navbar() {
   return (
     <>
+      {/* Top Navbar */}
       <div className="w-full border-b border-gray-200">
-        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
+        <div
+          className="
+            w-full
+            px-4
+            sm:px-[10%]
+            py-4
+            flex flex-col lg:flex-row
+            items-center
+            justify-between
+            gap-4
+          "
+        >
+          {/* Logo */}
           <div className="flex justify-center lg:justify-start w-full lg:w-auto">
             <NavLink to="/">
               <img
@@ -75,6 +88,7 @@ export default function Navbar() {
             </NavLink>
           </div>
 
+          {/* Phone Info */}
           <div className="hidden xl:block">
             <img
               src="/Phone-Info.png"
@@ -83,6 +97,7 @@ export default function Navbar() {
             />
           </div>
 
+          {/* Search */}
           <div className="w-full lg:flex-1 lg:max-w-[620px]">
             <div className="flex items-center gap-3 bg-[#F3F3F3] rounded-full px-4 py-3 w-full">
               <img src="/icon-search.png" alt="Search" className="w-4 h-4" />
@@ -95,7 +110,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
+          {/* Actions */}
+          <div className="flex items-center justify-center lg:justify-end gap-4 sm:gap-6 flex-wrap w-full lg:w-auto">
             <div className="flex items-center gap-2 cursor-pointer">
               <img
                 src="/icon-useraccount.png"
@@ -122,10 +138,23 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Bottom Navbar */}
       <div className="w-full border-b border-gray-200">
-        <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 py-4">
+        <div
+          className="
+            w-full
+            px-4
+            sm:px-[10%]
+            py-4
+            flex flex-col xl:flex-row
+            items-start xl:items-center
+            justify-between
+            gap-4
+          "
+        >
+          {/* Left Section */}
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 w-full xl:w-auto">
-            {/* Shop By Category */}
+            {/* Category Dropdown */}
             <div className="relative group">
               <div className="flex items-center justify-center gap-2 bg-black text-white rounded-md px-5 py-3 cursor-pointer w-full sm:w-fit">
                 <img
@@ -139,12 +168,13 @@ export default function Navbar() {
                 </span>
               </div>
 
-              {/* Main Category Dropdown */}
+              {/* Main Dropdown */}
               <div
                 className="
                   absolute top-full left-0 z-50 hidden
                   group-hover:block
                   w-[207px]
+                  max-w-[80vw]
                   bg-white
                   shadow-[4px_4px_10px_rgba(0,0,0,0.25)]
                   rounded-b-[12px]
@@ -152,7 +182,6 @@ export default function Navbar() {
               >
                 {categories.map((category) => (
                   <div key={category.name} className="relative group/item">
-                    {/* Parent Category */}
                     <div
                       className="
                         flex items-center justify-between
@@ -167,12 +196,13 @@ export default function Navbar() {
                       <ChevronRight size={18} />
                     </div>
 
-                    {/* Sub Category */}
+                    {/* Subcategories */}
                     <div
                       className="
                         absolute left-full top-0
                         hidden group-hover/item:block
                         w-[245px]
+                        max-w-[80vw]
                         bg-white
                         rounded-[12px]
                         shadow-[4px_4px_10px_rgba(0,0,0,0.25)]
@@ -199,7 +229,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Other Menu Items */}
+            {/* Menu Links */}
             <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm font-medium">
               <NavLink to="/our-collections">Our Collections</NavLink>
 
@@ -216,6 +246,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Right Section */}
           <div className="flex flex-wrap items-center gap-4 lg:gap-6 text-sm font-medium">
             <div className="flex items-center gap-2 cursor-pointer">
               <img
