@@ -39,93 +39,92 @@ export default function FlashDeals() {
   const [selectedColors, setSelectedColors] = useState(
     products.reduce(
       (acc, product) => ({ ...acc, [product.id]: product.colors[0] }),
-      {},
+      {} as Record<number, string>,
     ),
   );
+
   return (
     <>
-      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-4 mt-[50px]">
+      {/* Header Section */}
+      <div className="w-full px-4 sm:px-[10%] py-4 mt-[50px]">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 w-full min-h-[50px]">
           {/* Flash Deals Title */}
           <h2 className="font-['Urbanist'] font-bold text-[42px] leading-[50px] text-black select-none">
             Flash Deals
           </h2>
 
-          {/* Flash Deals Timer & Action Container */}
+          {/* Timer & Action */}
           <div className="flex flex-wrap items-end justify-start lg:justify-end gap-[39px] max-w-[466px] h-auto lg:h-[43px]">
-            {/* Days, Hours, Minutes, Seconds Box Wrapper */}
+            {/* Countdown */}
             <div className="flex flex-row items-start gap-5 max-w-[300px] h-[43px]">
-              {/* Days Box */}
+              {/* Days */}
               <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
                 <div className="flex flex-col items-start gap-[5px] w-[33px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px] text-black">
+                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
                     Days
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em] text-black">
+                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
                     03
                   </span>
                 </div>
 
-                {/* Semicolon (Colon 1) */}
-                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto  ">
+                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto">
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
-              {/* Hours Box */}
+              {/* Hours */}
               <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
                 <div className="flex flex-col items-start gap-[5px] w-[36px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px] text-black">
+                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
                     Hours
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em] text-black">
+                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
                     23
                   </span>
                 </div>
 
-                {/* Semicolon (Colon 2) */}
                 <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto mb-[2px]">
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
-              {/* Minutes Box */}
+              {/* Minutes */}
               <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
                 <div className="flex flex-col items-start gap-[5px] w-[49px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px] text-black">
+                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
                     Minutes
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em] text-black">
+                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
                     19
                   </span>
                 </div>
 
-                {/* Semicolon (Colon 3 - matches the explicit 23px h layout) */}
                 <div className="flex flex-col justify-end items-start gap-[8px] w-[4px] h-[23px] mx-auto">
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                   <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
-              {/* Seconds Box */}
+              {/* Seconds */}
               <div className="flex flex-row items-end gap-[5px] w-[60px] h-[43px]">
                 <div className="flex flex-col items-start gap-[5px] w-[53px] h-[43px]">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px] text-black">
+                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
                     Seconds
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em] text-black">
+                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
                     56
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* See All Flash Deals Link */}
+            {/* See All Products */}
             <a
               href="#all-products"
-              className="w-[127px] h-[24px] font-['Poppins'] font-normal text-[16px] leading-[24px] text-right underline text-black hover:opacity-75 transition-opacity"
+              className="font-['Poppins'] font-normal text-[16px] leading-[24px] underline text-black hover:opacity-75 transition-opacity"
             >
               See All Products
             </a>
@@ -133,14 +132,15 @@ export default function FlashDeals() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-5 md:px-20 py-6">
+      {/* Products Grid */}
+      <div className="w-full px-4 sm:px-[10%] py-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col bg-white border border-[#E5E5E5] rounded-[16px] p-3 w-full max-w-[312px] mx-auto group select-none"
+              className="flex flex-col bg-white border border-[#E5E5E5] rounded-[16px] p-3 w-full group select-none"
             >
-              {/* Image Wrapper & Floating Badge */}
+              {/* Product Image */}
               <div className="relative w-full aspect-[288/240] rounded-[12px] overflow-hidden bg-[#F2F2F2]">
                 <img
                   src={product.img}
@@ -149,33 +149,38 @@ export default function FlashDeals() {
                 />
               </div>
 
-              {/* Product Meta Section */}
+              {/* Product Details */}
               <div className="flex flex-col pt-3 pb-2 flex-grow">
-                {/* Product Title */}
                 <h3 className="font-['Urbanist'] font-bold text-[16px] leading-[22px] text-black line-clamp-1">
                   {product.name}
                 </h3>
 
-                {/* Color Swatches */}
+                {/* Color Options */}
                 <div className="flex items-center gap-1.5 mt-2 h-6">
                   {product.colors.map((color) => {
-                    // const isSelected = selectedColors[product.id] === color;
+                    const isSelected = selectedColors[product.id] === color;
+
                     return (
                       <button
                         key={color}
-                        className={`w-[18px] h-[18px] rounded-full relative transition-all`}
+                        onClick={() =>
+                          setSelectedColors((prev) => ({
+                            ...prev,
+                            [product.id]: color,
+                          }))
+                        }
+                        className="w-[18px] h-[18px] rounded-full relative transition-all"
                         style={{ backgroundColor: color }}
                       >
-                        {/* Active Ring Outer Border matching the design layout */}
-                        {/* {isSelected && (
+                        {isSelected && (
                           <span className="absolute inset-[-3px] rounded-full border border-black/40" />
-                        )} */}
+                        )}
                       </button>
                     );
                   })}
                 </div>
 
-                {/* Pricing Blocks */}
+                {/* Price */}
                 <div className="flex items-center gap-2 mt-3 font-['Urbanist'] font-bold text-[18px] leading-[24px]">
                   <span className="text-black">
                     ৳{" "}
@@ -183,6 +188,7 @@ export default function FlashDeals() {
                       minimumFractionDigits: 2,
                     })}
                   </span>
+
                   <span className="text-[#A3A3A3] line-through text-[14px] font-medium">
                     ৳{" "}
                     {product.original.toLocaleString("en-US", {
@@ -192,9 +198,8 @@ export default function FlashDeals() {
                 </div>
               </div>
 
-              {/* Add To Cart Interactive Element */}
+              {/* Add To Cart */}
               <button className="w-full h-[40px] mt-auto bg-[#1A1A1A] hover:bg-black text-white font-['Poppins'] font-medium text-[13px] flex items-center justify-center gap-2 rounded-[6px] transition-colors active:scale-[0.98]">
-                {/* Dynamic inline SVG Shopping Cart Icon */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
