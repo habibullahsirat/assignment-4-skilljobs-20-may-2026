@@ -162,6 +162,7 @@ export default function FlashDeals() {
                     // const isSelected = selectedColors[product.id] === color;
                     return (
                       <button
+                        key={color}
                         className={`w-[18px] h-[18px] rounded-full relative transition-all`}
                         style={{ backgroundColor: color }}
                       >
