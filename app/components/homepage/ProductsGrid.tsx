@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 const products = [
   {
@@ -74,15 +75,15 @@ function ProductDetailsModal({ product, onClose }) {
 
   const sizes = ["S", "M", "L", "XL", "XXL"];
 
-  return (
+  return createPortal(
     // Backdrop — clicking it closes the modal
     <div
-      className="fixed inset-0 backdrop-blur-md bg-white/30 bg-opacity-50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/30 backdrop-blur-md z-[10000] flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Modal box — stop click from bubbling to backdrop */}
       <div
-        className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+        className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button (X) */}
@@ -315,102 +316,116 @@ function ProductDetailsModal({ product, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
 function ProductGrid({ onSelectProduct }) {
   return (
     <>
+      {/* Section Heading */}
       <div className="text-center mt-12 mb-12">
-        <h1 className="text-[42px] font-bold font-['Urbanist]">New Arrivals</h1>
+        <h1 className="text-[42px] font-bold font-['Urbanist']">
+          New Arrivals
+        </h1>
+
         <p className="text-base font-normal font-['Poppins']">
           Be the first to wear the latest trends
         </p>
       </div>
 
-      <div className="max-w-[1280px] mx-auto flex flex-wrap justify-center gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            onClick={() => onSelectProduct(product)}
-            className="group relative w-[302px] bg-white rounded-[11px] p-[9px] cursor-pointer transition-all duration-300 hover:shadow-xl"
-          >
-            <div className="relative overflow-hidden rounded-[8px]">
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-full h-[290px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+      {/* Products */}
+      <div className="w-full px-4 sm:px-[10%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              onClick={() => onSelectProduct(product)}
+              className="group relative bg-white rounded-[11px] p-[9px] cursor-pointer transition-all duration-300 hover:shadow-xl"
+            >
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-[8px]">
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-full h-[290px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-              <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="/icon-heart2.png" alt="" />
-                </button>
+                {/* Action Icons */}
+                <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-heart2.png" alt="" />
+                  </button>
 
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="icon-eye.png" alt="" />
-                </button>
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-eye.png" alt="" />
+                  </button>
 
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="icon-share.png" alt="" />
-                </button>
-              </div>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3">
-              <h3 className="text-[17px] font-semibold text-black capitalize leading-5">
-                {product.name}
-              </h3>
-
-              <div className="flex gap-1">
-                {product.colors.map((color, i) => (
-                  <div
-                    key={i}
-                    className="w-[22px] h-[22px] rounded-full border border-black flex items-center justify-center"
-                  >
-                    <span
-                      className="w-[16px] h-[16px] rounded-full"
-                      style={{ backgroundColor: color }}
-                    />
-                  </div>
-                ))}
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-share.png" alt="" />
+                  </button>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                <span className="text-[20px] font-semibold text-black">
-                  ৳ {product.price.toLocaleString()}
-                </span>
+              {/* Content */}
+              <div className="mt-4 flex flex-col gap-3">
+                <h3 className="text-[17px] font-semibold text-black capitalize leading-5">
+                  {product.name}
+                </h3>
 
-                <span className="text-[13px] text-black/30 line-through">
-                  ৳ {product.original.toLocaleString()}
-                </span>
-              </div>
+                {/* Colors */}
+                <div className="flex gap-1">
+                  {product.colors.map((color, i) => (
+                    <div
+                      key={i}
+                      className="w-[22px] h-[22px] rounded-full border border-black flex items-center justify-center"
+                    >
+                      <span
+                        className="w-[16px] h-[16px] rounded-full"
+                        style={{ backgroundColor: color }}
+                      />
+                    </div>
+                  ))}
+                </div>
 
-              <button
-                onClick={(e) => e.stopPropagation()}
-                className="w-full h-[41px] bg-[#161616] text-white rounded flex items-center justify-center gap-2 hover:bg-black transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-[18px] h-[18px]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                {/* Price */}
+                <div className="flex items-center gap-2">
+                  <span className="text-[20px] font-semibold text-black">
+                    ৳ {product.price.toLocaleString()}
+                  </span>
+
+                  <span className="text-[13px] text-black/30 line-through">
+                    ৳ {product.original.toLocaleString()}
+                  </span>
+                </div>
+
+                {/* Add To Cart */}
+                <button
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-full h-[41px] bg-[#161616] text-white rounded flex items-center justify-center gap-2 hover:bg-black transition"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.8}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.8}
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
 
-                <span className="text-sm">Add To Cart</span>
-              </button>
+                  <span className="text-sm">Add To Cart</span>
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
