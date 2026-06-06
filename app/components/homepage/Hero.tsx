@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         {/* Navigation Dots */}
-        <div
+        {/* <div
           className="
             absolute
             bottom-4
@@ -74,7 +74,7 @@ export default function Hero() {
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
