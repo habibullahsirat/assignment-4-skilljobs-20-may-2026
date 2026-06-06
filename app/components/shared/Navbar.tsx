@@ -71,7 +71,8 @@ export default function Navbar() {
         <div className="w-full">
           {/* ================= TOP NAVBAR ================= */}
           <div className="w-full border-b border-gray-200">
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            {/* <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"> */}
+            <div className="w-full px-4 sm:px-[10%] py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               {/* Logo + Mobile Menu Button */}
               <div className="flex items-center justify-between w-full lg:w-auto">
                 <NavLink to="/">
@@ -142,7 +143,8 @@ export default function Navbar() {
 
             {/* MOBILE MENU DRAWER */}
             {mobileOpen && (
-              <div className="lg:hidden border-t bg-white px-4 py-4 space-y-4">
+              // <div className="lg:hidden border-t bg-white px-4 py-4 space-y-4">
+              <div className="lg:hidden border-t bg-white px-4 sm:px-[10%] py-4 space-y-4">
                 <NavLink to="/our-collections">Our Collections</NavLink>
                 <NavLink to="/flash-deals">Flash Deals</NavLink>
                 <NavLink to="/new-arrivals">New Arrivals</NavLink>
@@ -160,7 +162,8 @@ export default function Navbar() {
 
           {/* ================= BOTTOM NAVBAR (DESKTOP) ================= */}
           <div className="w-full border-b border-gray-200 hidden lg:block">
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex items-center justify-between">
+            {/* <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex items-center justify-between"> */}
+            <div className="w-full px-4 sm:px-[10%] py-4 flex items-center justify-between">
               {/* LEFT */}
               <div className="flex items-center gap-6">
                 {/* CATEGORY DROPDOWN */}
@@ -231,7 +234,8 @@ export default function Navbar() {
 
           {/* ================= MOBILE CATEGORY ACCORDION ================= */}
           {mobileOpen && (
-            <div className="lg:hidden border-t px-4 py-4">
+            // <div className="lg:hidden border-t px-4 py-4">
+            <div className="lg:hidden border-t px-4 sm:px-[10%] py-4">
               <div className="font-semibold mb-3">Shop by Category</div>
 
               {categories.map((category) => (
