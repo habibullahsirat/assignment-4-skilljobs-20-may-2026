@@ -46,75 +46,75 @@ export default function FlashDeals() {
   return (
     <>
       {/* Header Section */}
-      <div className="w-full px-4 sm:px-[10%] py-4 mt-[50px]">
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 w-full min-h-[50px]">
+      <div className="w-full px-4 sm:px-[10%] py-4 mt-8 sm:mt-[50px]">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 sm:gap-6 w-full min-h-[50px]">
           {/* Flash Deals Title */}
-          <h2 className="font-['Urbanist'] font-bold text-[42px] leading-[50px] text-black select-none">
+          <h2 className="font-['Urbanist'] font-bold text-[28px] sm:text-[42px] leading-[34px] sm:leading-[50px] text-black select-none">
             Flash Deals
           </h2>
 
           {/* Timer & Action */}
-          <div className="flex flex-wrap items-end justify-start lg:justify-end gap-[39px] max-w-[466px] h-auto lg:h-[43px]">
+          <div className="flex flex-wrap items-end justify-start lg:justify-end gap-3 sm:gap-6 lg:gap-[39px] w-full lg:max-w-[466px] h-auto">
             {/* Countdown */}
-            <div className="flex flex-row items-start gap-5 max-w-[300px] h-[43px]">
+            <div className="flex flex-row items-start gap-2 sm:gap-5 max-w-full sm:max-w-[300px]">
               {/* Days */}
-              <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
-                <div className="flex flex-col items-start gap-[5px] w-[33px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
+              <div className="flex flex-row justify-between items-end gap-[3px] sm:gap-[5px]">
+                <div className="flex flex-col items-start gap-[2px] sm:gap-[5px]">
+                  <span className="font-['Poppins'] font-semibold text-[9px] sm:text-[12px] leading-[14px] sm:leading-[18px]">
                     Days
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
+                  <span className="font-['Urbanist'] font-bold text-[18px] sm:text-[28px] leading-[22px] sm:leading-[34px] tracking-[0.04em]">
                     03
                   </span>
                 </div>
 
-                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto">
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
+                <div className="flex flex-col items-start gap-[4px] sm:gap-[8px] w-[3px] sm:w-[4px]">
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
               {/* Hours */}
-              <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
-                <div className="flex flex-col items-start gap-[5px] w-[36px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
+              <div className="flex flex-row justify-between items-end gap-[3px] sm:gap-[5px]">
+                <div className="flex flex-col items-start gap-[2px] sm:gap-[5px]">
+                  <span className="font-['Poppins'] font-semibold text-[9px] sm:text-[12px] leading-[14px] sm:leading-[18px]">
                     Hours
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
+                  <span className="font-['Urbanist'] font-bold text-[18px] sm:text-[28px] leading-[22px] sm:leading-[34px] tracking-[0.04em]">
                     23
                   </span>
                 </div>
 
-                <div className="flex flex-col items-start gap-[8px] w-[4px] h-[16px] mx-auto mb-[2px]">
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
+                <div className="flex flex-col items-start gap-[4px] sm:gap-[8px] w-[3px] sm:w-[4px]">
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
               {/* Minutes */}
-              <div className="flex flex-row justify-between items-end gap-[5px] w-[60px] h-[43px]">
-                <div className="flex flex-col items-start gap-[5px] w-[49px] h-[43px] mx-auto">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
-                    Minutes
+              <div className="flex flex-row justify-between items-end gap-[3px] sm:gap-[5px]">
+                <div className="flex flex-col items-start gap-[2px] sm:gap-[5px]">
+                  <span className="font-['Poppins'] font-semibold text-[9px] sm:text-[12px] leading-[14px] sm:leading-[18px]">
+                    Mins
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
+                  <span className="font-['Urbanist'] font-bold text-[18px] sm:text-[28px] leading-[22px] sm:leading-[34px] tracking-[0.04em]">
                     19
                   </span>
                 </div>
 
-                <div className="flex flex-col justify-end items-start gap-[8px] w-[4px] h-[23px] mx-auto">
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
-                  <div className="w-[4px] h-[4px] rounded-full bg-[#FF5F39]" />
+                <div className="flex flex-col justify-end items-start gap-[4px] sm:gap-[8px] w-[3px] sm:w-[4px]">
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
+                  <div className="w-[3px] sm:w-[4px] h-[3px] sm:h-[4px] rounded-full bg-[#FF5F39]" />
                 </div>
               </div>
 
               {/* Seconds */}
-              <div className="flex flex-row items-end gap-[5px] w-[60px] h-[43px]">
-                <div className="flex flex-col items-start gap-[5px] w-[53px] h-[43px]">
-                  <span className="font-['Poppins'] font-semibold text-[12px] leading-[18px]">
-                    Seconds
+              <div className="flex flex-row items-end gap-[3px] sm:gap-[5px]">
+                <div className="flex flex-col items-start gap-[2px] sm:gap-[5px]">
+                  <span className="font-['Poppins'] font-semibold text-[9px] sm:text-[12px] leading-[14px] sm:leading-[18px]">
+                    Secs
                   </span>
-                  <span className="font-['Urbanist'] font-bold text-[28px] leading-[34px] tracking-[0.04em]">
+                  <span className="font-['Urbanist'] font-bold text-[18px] sm:text-[28px] leading-[22px] sm:leading-[34px] tracking-[0.04em]">
                     56
                   </span>
                 </div>
@@ -124,9 +124,9 @@ export default function FlashDeals() {
             {/* See All Products */}
             <a
               href="#all-products"
-              className="font-['Poppins'] font-normal text-[16px] leading-[24px] underline text-black hover:opacity-75 transition-opacity"
+              className="font-['Poppins'] font-normal text-[12px] sm:text-[16px] leading-[18px] sm:leading-[24px] underline text-black hover:opacity-75 transition-opacity whitespace-nowrap"
             >
-              See All Products
+              See All
             </a>
           </div>
         </div>

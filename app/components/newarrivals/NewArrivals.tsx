@@ -16,100 +16,89 @@ export default function NewArrival() {
     "Monochrome Triangular",
     "Rose Printed",
     "Daisy Printed",
-    "Perforated Square Blue",
-    "Perforated Square Ivory",
-    "Celery Ice",
-    "Marmalade Orange",
-    "Brown Tone Chevron",
-    "Green Tropical",
-    "Orchid",
   ];
 
   return (
     <div className="bg-white min-h-screen">
       {/* Breadcrumb */}
-      <div className="max-w-[1400px] mx-auto px-6 py-6">
-        <div className="text-sm text-gray-500">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-4 sm:py-6">
+        <div className="text-xs sm:text-sm text-gray-500">
           Home <span className="mx-2">/</span>
           <span className="font-medium text-black">New Arrival</span>
         </div>
 
-        {/* Categories */}
-        <div className="flex items-center gap-6 mt-8">
-          <button className="w-35 h-10 flex items-center justify-center text-2xl">
-            <img src="/icon-left.png" alt="" />
+        {/* Categories Carousel */}
+        <div className="flex items-center gap-3 sm:gap-6 mt-6 sm:mt-8 overflow-x-auto pb-2">
+          <button className="w-8 h-8 flex items-center justify-center flex-shrink-0 text-lg">
+            <img src="/icon-left.png" alt="" className="w-5 h-5" />
           </button>
 
           {categories.map((item) => (
-            <div key={item.name} className="text-center">
-              <div className="w-40 h-40 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+            <div key={item.name} className="text-center flex-shrink-0">
+              <div className="w-28 h-28 sm:w-40 sm:h-40 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden mx-auto">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-24 h-24 object-contain"
+                  className="w-16 h-16 sm:w-24 sm:h-24 object-contain"
                 />
               </div>
-              <p className="mt-3 text-sm font-medium">{item.name}</p>
+              <p className="mt-2 text-xs sm:text-sm font-medium">{item.name}</p>
             </div>
           ))}
 
-          <button className="w-10 h-10 flex items-center justify-center text-2xl ml-auto">
-            <img src="/icon-right.png" alt="" />
+          <button className="w-8 h-8 flex items-center justify-center flex-shrink-0 text-lg">
+            <img src="/icon-right.png" alt="" className="w-5 h-5" />
           </button>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-[280px_1fr] gap-8 mt-10">
-          {/* Sidebar */}
-          <aside>
+        <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] lg:grid-cols-[280px_1fr] gap-6 sm:gap-8 mt-8 sm:mt-10">
+          {/* Sidebar - Hidden on Mobile, Shows on Tablet+ */}
+          <aside className="hidden md:block space-y-4 text-sm">
             {/* Price */}
-            <div className="border-b pb-6">
-              <h3 className="font-semibold mb-4">Price</h3>
+            <div className="border-b pb-4">
+              <h3 className="font-semibold mb-3 text-sm">Price</h3>
 
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 text-xs">
                 {[
                   "0 - ৳ 1000",
                   "৳ 1000 - ৳ 5000",
                   "৳ 5000 - ৳ 10000",
-                  "৳ 10000 - ৳ 20000",
-                  "৳ 20000 - ৳ 30000",
-                  "৳ 30000 - ৳ 50000",
-                  "৳ 50000 +",
                 ].map((item) => (
-                  <label key={item} className="flex items-center gap-3">
-                    <input type="checkbox" />
+                  <label key={item} className="flex items-center gap-2">
+                    <input type="checkbox" className="w-3 h-3" />
                     {item}
                   </label>
                 ))}
               </div>
 
-              <div className="flex gap-2 mt-5">
+              <div className="flex gap-2 mt-3">
                 <input
                   placeholder="Min"
-                  className="w-20 border rounded px-3 py-2 text-sm"
+                  className="w-16 border rounded px-2 py-1.5 text-xs"
                 />
                 <input
                   placeholder="Max"
-                  className="w-20 border rounded px-3 py-2 text-sm"
+                  className="w-16 border rounded px-2 py-1.5 text-xs"
                 />
-                <button className="bg-yellow-400 px-4 py-2 text-sm font-semibold rounded">
+                <button className="bg-yellow-400 px-3 py-1.5 text-xs font-semibold rounded">
                   FILTER
                 </button>
               </div>
             </div>
 
             {/* Fabric Color */}
-            <div className="border-b py-6">
-              <h3 className="font-semibold mb-4">Fabric Color</h3>
+            <div className="border-b py-4">
+              <h3 className="font-semibold mb-3 text-sm">Fabric Color</h3>
 
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {fabricColors.map((color, i) => (
                   <label
                     key={color}
-                    className="flex items-center gap-3 text-sm"
+                    className="flex items-center gap-2 text-xs"
                   >
                     <span
-                      className="w-3 h-3 rounded-full border"
+                      className="w-2.5 h-2.5 rounded-full border"
                       style={{
                         backgroundColor: [
                           "#1D4ED8",
@@ -117,13 +106,6 @@ export default function NewArrival() {
                           "#444",
                           "#F8D5D8",
                           "#E9DCC6",
-                          "#2563EB",
-                          "#DDD6C3",
-                          "#B4C09B",
-                          "#D97706",
-                          "#9A7B4F",
-                          "#166534",
-                          "#C084FC",
                         ][i],
                       }}
                     />
@@ -132,136 +114,56 @@ export default function NewArrival() {
                 ))}
               </div>
             </div>
-
-            {/* Structure Color */}
-            <div className="border-b py-6">
-              <h3 className="font-semibold mb-4">Structure Color</h3>
-
-              <div className="space-y-3 text-sm">
-                {[
-                  "White",
-                  "Light",
-                  "Dark",
-                  "Ebony",
-                  "Pale Green",
-                  "Yellow",
-                  "Medium",
-                ].map((item) => (
-                  <label key={item} className="flex items-center gap-3">
-                    <span className="w-3 h-3 rounded-full bg-gray-400" />
-                    {item}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Material */}
-            <div className="border-b py-6">
-              <h3 className="font-semibold mb-4">Material</h3>
-
-              <div className="space-y-3 text-sm">
-                {[
-                  "Wood",
-                  "Metal",
-                  "Faux Leather",
-                  "Fabric",
-                  "Velvet",
-                  "Ceramics",
-                  "Glass",
-                  "Cane",
-                  "Microfiber",
-                ].map((item) => (
-                  <label key={item} className="flex items-center gap-3">
-                    <input type="checkbox" />
-                    {item}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Size */}
-            <div className="border-b py-6">
-              <h3 className="font-semibold mb-4">Size</h3>
-
-              <div className="space-y-3 text-sm">
-                {["1 Seater", "2 Seater", "3 Seater"].map((item) => (
-                  <label key={item} className="flex items-center gap-3">
-                    <input type="checkbox" />
-                    {item}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Sofa Category */}
-            <div className="py-6">
-              <h3 className="font-semibold uppercase mb-4">Sofa & Ottoman</h3>
-
-              <div className="space-y-3 text-sm text-gray-600">
-                <p>One Seater Sofa</p>
-                <p>Two Seater Sofa</p>
-                <p>Three Seater Sofa</p>
-                <p>L Shape Sofa</p>
-                <p>Sofa with Chaise</p>
-                <p>Sofa Cum Bed</p>
-              </div>
-            </div>
           </aside>
 
           {/* Product Section */}
           <section>
             {/* Toolbar */}
-            <div className="flex items-center justify-between mb-8 text-sm">
-              <div className="text-gray-500">Showing 1–28 of 30 results</div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 sm:mb-8 text-xs">
+              <div className="text-gray-500">Showing 1–15 of 30 results</div>
 
-              <div className="flex items-center gap-8">
-                <div>
-                  Show:
-                  <span className="font-semibold ml-2">28</span>
-                  <span className="ml-3">56</span>
-                  <span className="ml-3">84</span>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8">
+                <div className="text-xs">
+                  Show: <span className="font-semibold ml-2">15</span>
                 </div>
 
-                <div>
+                <div className="text-xs">
                   Sort:
-                  <select className="ml-2 border-none outline-none">
-                    <option>Short by latest</option>
+                  <select className="ml-2 border-none outline-none text-xs">
+                    <option>Latest</option>
                   </select>
-                </div>
-
-                <div className="flex gap-3 text-lg">
-                  <span>▦</span>
-                  <span>☰</span>
                 </div>
               </div>
             </div>
 
-            {/* Products */}
-            <div className="grid grid-cols-3 gap-x-8 gap-y-10">
+            {/* Products Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {products.map((_, index) => (
-                <div key={index}>
-                  <div className="bg-gray-100 aspect-square flex items-center justify-center">
+                <div key={index} className="group">
+                  <div className="bg-gray-100 w-full aspect-square flex items-center justify-center rounded overflow-hidden group-hover:shadow-lg transition-shadow">
                     <img
                       src="/bed-image.png"
                       alt="bed"
-                      className="w-56 object-contain"
+                      className="w-40 sm:w-48 lg:w-56 object-contain"
                     />
                   </div>
 
-                  <h3 className="mt-4 text-[15px] font-medium">
+                  <h3 className="mt-3 sm:mt-4 text-xs sm:text-[15px] font-medium line-clamp-2">
                     Pompeii Faux Leather Dark Queen Bed
                   </h3>
 
                   <div className="mt-2">
-                    <span className="text-red-500 font-semibold">৳ 57,090</span>
-                    <span className="ml-2 text-gray-400 line-through">
+                    <span className="text-red-500 font-semibold text-xs sm:text-sm">
+                      ৳ 57,090
+                    </span>
+                    <span className="ml-2 text-gray-400 line-through text-xs">
                       ৳ 60,000
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2 mt-2">
-                    <div className="text-yellow-400">★★★★★</div>
-                    <span className="text-gray-500 text-sm">(88)</span>
+                    <div className="text-yellow-400 text-sm">★★★★★</div>
+                    <span className="text-gray-500 text-xs">(88)</span>
                   </div>
                 </div>
               ))}

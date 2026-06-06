@@ -70,12 +70,12 @@ const products = [
 
 export default function CategoryProducts() {
   return (
-    <div className="w-full px-4 sm:px-[10%] py-8">
+    <div className="w-full px-2 sm:px-4 lg:px-[10%] py-6 sm:py-8">
       <div
         className="
           flex
           flex-nowrap
-          gap-4
+          gap-2 sm:gap-4
           overflow-x-auto
           items-center
           [&::-webkit-scrollbar]:hidden
@@ -95,7 +95,7 @@ export default function CategoryProducts() {
               rounded-[16px]
             "
           >
-            <div className="w-[302px] h-[354px]">
+            <div className="w-[280px] sm:w-[302px] h-[320px] sm:h-[354px]">
               <img
                 src={item.image}
                 alt={item.category}
@@ -103,7 +103,7 @@ export default function CategoryProducts() {
               />
             </div>
 
-            <p className="mt-2 text-sm text-center">{item.category}</p>
+            <p className="mt-2 text-xs sm:text-sm text-center font-medium">{item.category}</p>
           </div>
         ))}
       </div>
