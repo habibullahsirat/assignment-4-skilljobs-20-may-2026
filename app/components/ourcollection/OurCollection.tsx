@@ -432,87 +432,84 @@ function ProductGrid({ onSelectProduct }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1380px] mx-auto px-4">
+      <div className="max-w-[1280px] mx-auto flex flex-wrap justify-center gap-6">
         {products.map((product) => (
           <div
             key={product.id}
-            className="
-        bg-white
-        rounded-md
-        w-full
-        max-w-[302px]
-        min-w-0
-        mx-auto
-        cursor-pointer
-        flex flex-col
-      "
             onClick={() => onSelectProduct(product)}
+            className="group relative w-[302px] bg-white rounded-[11px] p-[9px] cursor-pointer transition-all duration-300 hover:shadow-xl"
           >
-            {/* Product Image */}
-            <div className="w-full aspect-[283.34/289.42] overflow-hidden">
+            <div className="relative overflow-hidden rounded-[8px]">
               <img
                 src={product.img}
                 alt={product.name}
-                className="
-            w-full
-            h-full
-            object-cover
-            rounded-[7.46px]
-            hover:scale-105
-            transition-transform
-            duration-300
-          "
+                className="w-full h-[290px] object-cover transition-transform duration-500 group-hover:scale-105"
               />
+
+              <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                  <img src="/icon-heart2.png" alt="" />
+                </button>
+
+                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                  <img src="icon-eye.png" alt="" />
+                </button>
+
+                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                  <img src="icon-share.png" alt="" />
+                </button>
+              </div>
             </div>
 
-            {/* Product Info */}
-            <div className="p-3 flex flex-col flex-1">
-              <p className="text-sm font-medium text-gray-900 mb-2 line-clamp-2">
+            <div className="mt-4 flex flex-col gap-3">
+              <h3 className="text-[17px] font-semibold text-black capitalize leading-5">
                 {product.name}
-              </p>
+              </h3>
 
-              {/* Color Swatches */}
-              <div className="flex gap-1 mb-2 flex-wrap">
+              <div className="flex gap-1">
                 {product.colors.map((color, i) => (
-                  <span
+                  <div
                     key={i}
-                    className="w-4 h-4 rounded-full border border-gray-300"
-                    style={{ backgroundColor: color }}
-                  />
+                    className="w-[22px] h-[22px] rounded-full border border-black flex items-center justify-center"
+                  >
+                    <span
+                      className="w-[16px] h-[16px] rounded-full"
+                      style={{ backgroundColor: color }}
+                    />
+                  </div>
                 ))}
               </div>
 
-              {/* Price */}
-              <div className="flex items-center gap-2 mb-3 flex-wrap">
-                <span className="text-sm font-semibold text-gray-900">
-                  ৳ {product.price.toLocaleString()}.00
+              <div className="flex items-center gap-2">
+                <span className="text-[20px] font-semibold text-black">
+                  ৳ {product.price.toLocaleString()}
                 </span>
-                <span className="text-xs text-gray-400 line-through">
-                  ৳ {product.original.toLocaleString()}.00
+
+                <span className="text-[13px] text-black/30 line-through">
+                  ৳ {product.original.toLocaleString()}
                 </span>
               </div>
 
-              {/* Add to Cart Button */}
               <button
-                className="
-                mt-auto
-                w-full
-                flex
-                items-center
-                justify-center
-                gap-2
-                bg-gray-900
-                text-white
-                text-sm
-                py-2
-                px-3
-                hover:bg-gray-700
-                transition-colors
-                rounded-md
-              "
                 onClick={(e) => e.stopPropagation()}
+                className="w-full h-[41px] bg-[#161616] text-white rounded flex items-center justify-center gap-2 hover:bg-black transition"
               >
-                Add To Cart
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[18px] h-[18px]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.8}
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+
+                <span className="text-sm">Add To Cart</span>
               </button>
             </div>
           </div>
