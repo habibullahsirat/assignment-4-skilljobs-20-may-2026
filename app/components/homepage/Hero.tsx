@@ -49,32 +49,6 @@ export default function Hero() {
             </div>
           ))}
         </div>
-
-        {/* Navigation Dots */}
-        {/* <div
-          className="
-            absolute
-            bottom-4
-            left-1/2
-            -translate-x-1/2
-            flex
-            items-center
-            gap-2
-          "
-        >
-          {banners.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`transition-all duration-300 rounded-full ${
-                currentIndex === index
-                  ? "w-8 h-2 bg-white"
-                  : "w-2 h-2 bg-white/60"
-              }`}
-            />
-          ))}
-        </div> */}
       </div>
     </section>
   );
