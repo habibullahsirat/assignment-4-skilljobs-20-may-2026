@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 const products = [
   {
@@ -108,15 +109,15 @@ function ProductDetailsModal({ product, onClose }) {
 
   const sizes = ["S", "M", "L", "XL", "XXL"];
 
-  return (
+  return createPortal(
     // Backdrop — clicking it closes the modal
     <div
-      className="fixed inset-0 backdrop-blur-md bg-white/30 bg-opacity-50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/30 backdrop-blur-md z-[10000] flex items-center justify-center p-4"
       onClick={onClose}
     >
       {/* Modal box — stop click from bubbling to backdrop */}
       <div
-        className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto relative"
+        className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button (X) */}
@@ -349,203 +350,115 @@ function ProductDetailsModal({ product, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
 function ProductGrid({ onSelectProduct }) {
   return (
     <>
-      <div className="w-full flex flex-col items-center justify-center py-16 px-6 min-h-[180px]">
-        <h1 className="font-family:'Playfair Display',serif text-5xl font-bold tracking-tight text-center leading-tight mb-4">
-          Our Collections
+      {/* Section Heading */}
+      <div className="text-center mt-12 mb-12">
+        <h1 className="text-[42px] font-bold font-['Urbanist']">
+          New Arrivals
         </h1>
-        <p className="text-[#a8a8a8] text-sm font-light tracking-widest uppercase text-center">
-          Find your perfect style from our latest fashion picks
+
+        <p className="text-base font-normal font-['Poppins']">
+          Be the first to wear the latest trends
         </p>
       </div>
 
-      <div className="flex gap-[12px] mx-[15%] mb-[50px]">
-        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
-          Tops Collection
-        </div>
-        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
-          Bottoms Wear
-        </div>
-        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
-          Loungewear
-        </div>
-        <div className="bg-[#F4F2F1] rounded-[100px] py-[10px] px-[18px] text-[#161616] font-['Poppins'] font-[400]">
-          Accessories
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between w-[1280px] mx-[15%] my-[16px] text-xs text-gray-500">
-        <button className="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded text-gray-600 hover:bg-gray-50">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 6h18M6 12h12M10 18h4"
-            />
-          </svg>
-          <span>Show Filters</span>
-        </button>
-
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-2">
-            <span>Show:</span>
-            <button className="font-semibold text-black">12</button>
-            <button>24</button>
-            <button>48</button>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span>Sort:</span>
-            <button className="flex items-center gap-1 text-black">
-              <span>Short by latest</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-3 h-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div>Showing 1–28 of 30 results</div>
-        </div>
-      </div>
-
-      <div className="max-w-[1280px] mx-auto flex flex-wrap justify-center gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            onClick={() => onSelectProduct(product)}
-            className="group relative w-[302px] bg-white rounded-[11px] p-[9px] cursor-pointer transition-all duration-300 hover:shadow-xl"
-          >
-            <div className="relative overflow-hidden rounded-[8px]">
-              <img
-                src={product.img}
-                alt={product.name}
-                className="w-full h-[290px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-
-              <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="/icon-heart2.png" alt="" />
-                </button>
-
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="icon-eye.png" alt="" />
-                </button>
-
-                <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
-                  <img src="icon-share.png" alt="" />
-                </button>
-              </div>
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3">
-              <h3 className="text-[17px] font-semibold text-black capitalize leading-5">
-                {product.name}
-              </h3>
-
-              <div className="flex gap-1">
-                {product.colors.map((color, i) => (
-                  <div
-                    key={i}
-                    className="w-[22px] h-[22px] rounded-full border border-black flex items-center justify-center"
-                  >
-                    <span
-                      className="w-[16px] h-[16px] rounded-full"
-                      style={{ backgroundColor: color }}
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex items-center gap-2">
-                <span className="text-[20px] font-semibold text-black">
-                  ৳ {product.price.toLocaleString()}
-                </span>
-
-                <span className="text-[13px] text-black/30 line-through">
-                  ৳ {product.original.toLocaleString()}
-                </span>
-              </div>
-
-              <button
-                onClick={(e) => e.stopPropagation()}
-                className="w-full h-[41px] bg-[#161616] text-white rounded flex items-center justify-center gap-2 hover:bg-black transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-[18px] h-[18px]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.8}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-
-                <span className="text-sm">Add To Cart</span>
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center items-center py-8">
-        <div className="flex items-center gap-3">
-          <button className="w-10 h-10 rounded bg-black text-white flex items-center justify-center text-sm font-medium">
-            1
-          </button>
-
-          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
-            2
-          </button>
-
-          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center text-sm font-medium hover:bg-gray-200 transition">
-            3
-          </button>
-
-          <button className="w-10 h-10 rounded bg-gray-100 text-black flex items-center justify-center hover:bg-gray-200 transition">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      {/* Products */}
+      <div className="w-full px-4 sm:px-[10%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              onClick={() => onSelectProduct(product)}
+              className="group relative bg-white rounded-[11px] p-[9px] cursor-pointer transition-all duration-300 hover:shadow-xl"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+              {/* Image */}
+              <div className="relative overflow-hidden rounded-[8px]">
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-full h-[290px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+
+                {/* Action Icons */}
+                <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-heart2.png" alt="" />
+                  </button>
+
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-eye.png" alt="" />
+                  </button>
+
+                  <button className="w-11 h-11 bg-white rounded-full shadow flex items-center justify-center">
+                    <img src="/icon-share.png" alt="" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="mt-4 flex flex-col gap-3">
+                <h3 className="text-[17px] font-semibold text-black capitalize leading-5">
+                  {product.name}
+                </h3>
+
+                {/* Colors */}
+                <div className="flex gap-1">
+                  {product.colors.map((color, i) => (
+                    <div
+                      key={i}
+                      className="w-[22px] h-[22px] rounded-full border border-black flex items-center justify-center"
+                    >
+                      <span
+                        className="w-[16px] h-[16px] rounded-full"
+                        style={{ backgroundColor: color }}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Price */}
+                <div className="flex items-center gap-2">
+                  <span className="text-[20px] font-semibold text-black">
+                    ৳ {product.price.toLocaleString()}
+                  </span>
+
+                  <span className="text-[13px] text-black/30 line-through">
+                    ৳ {product.original.toLocaleString()}
+                  </span>
+                </div>
+
+                {/* Add To Cart */}
+                <button
+                  onClick={(e) => e.stopPropagation()}
+                  className="w-full h-[41px] bg-[#161616] text-white rounded flex items-center justify-center gap-2 hover:bg-black transition"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-[18px] h-[18px]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.8}
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+
+                  <span className="text-sm">Add To Cart</span>
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
