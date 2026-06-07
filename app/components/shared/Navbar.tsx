@@ -69,7 +69,6 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-[9999] w-full bg-white shadow-md">
         <div className="w-full">
-          {/* ================= TOP NAVBAR ================= */}
           <div className="w-full border-b border-gray-200">
             {/* <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"> */}
             <div className="w-full px-4 sm:px-[10%] py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -160,7 +159,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* ================= BOTTOM NAVBAR (DESKTOP) ================= */}
+
           <div className="w-full border-b border-gray-200 hidden lg:block">
             {/* <div className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] py-4 flex items-center justify-between"> */}
             <div className="w-full px-4 sm:px-[10%] py-4 flex items-center justify-between">
