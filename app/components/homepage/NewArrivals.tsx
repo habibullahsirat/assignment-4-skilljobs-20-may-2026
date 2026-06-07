@@ -148,7 +148,9 @@ function ProductDetailsModal({ product, onClose }) {
 
               {/* Shades */}
               <div className="mb-4">
-                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">Shades</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">
+                  Shades
+                </p>
                 <div className="flex gap-2">
                   {product.colors.map((color, i) => (
                     <button
@@ -167,7 +169,9 @@ function ProductDetailsModal({ product, onClose }) {
 
               {/* Size */}
               <div className="mb-4">
-                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">Size</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">
+                  Size
+                </p>
                 <div className="flex gap-2 flex-wrap">
                   {sizes.map((size) => (
                     <button
@@ -187,7 +191,9 @@ function ProductDetailsModal({ product, onClose }) {
 
               {/* Count + Add to Bag */}
               <div className="mb-4">
-                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">Count</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">
+                  Count
+                </p>
                 <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                   {/* Counter */}
                   <div className="flex items-center border border-gray-300 flex-shrink-0">
@@ -250,9 +256,7 @@ function ProductDetailsModal({ product, onClose }) {
 
               {/* Delivery Info */}
               <div className="space-y-1 text-[10px] sm:text-xs text-gray-600 mb-3">
-                <p>
-                  🕐 Delivery: 02-04 Days (Dhaka), 04-08 Days (Outside)
-                </p>
+                <p>🕐 Delivery: 02-04 Days (Dhaka), 04-08 Days (Outside)</p>
                 <p>🔄 Exchangeable within 10 Days</p>
               </div>
 
@@ -351,15 +355,27 @@ function ProductGrid({ onSelectProduct }) {
                 {/* Action Icons */}
                 <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex flex-col gap-2 sm:gap-3 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                   <button className="w-8 h-8 sm:w-11 sm:h-11 bg-white rounded-full shadow flex items-center justify-center flex-shrink-0">
-                    <img src="/icon-heart2.png" alt="" className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <img
+                      src="/icon-heart2.png"
+                      alt=""
+                      className="w-4 h-4 sm:w-5 sm:h-5"
+                    />
                   </button>
 
                   <button className="w-8 h-8 sm:w-11 sm:h-11 bg-white rounded-full shadow flex items-center justify-center flex-shrink-0">
-                    <img src="/icon-eye.png" alt="" className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <img
+                      src="/icon-eye.png"
+                      alt=""
+                      className="w-4 h-4 sm:w-5 sm:h-5"
+                    />
                   </button>
 
                   <button className="w-8 h-8 sm:w-11 sm:h-11 bg-white rounded-full shadow flex items-center justify-center flex-shrink-0">
-                    <img src="/icon-share.png" alt="" className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <img
+                      src="/icon-share.png"
+                      alt=""
+                      className="w-4 h-4 sm:w-5 sm:h-5"
+                    />
                   </button>
                 </div>
               </div>
@@ -427,7 +443,7 @@ function ProductGrid({ onSelectProduct }) {
   );
 }
 
-export default function ProductsGrid() {
+export default function NewArrivals() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
