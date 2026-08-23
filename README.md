@@ -1,87 +1,30 @@
-# Welcome to React Router!
+# Kizil Fashion
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, responsive e-commerce storefront UI built with React + TypeScript and Vite. Kizil Fashion provides a clean homepage, modular components for product showcases (New Arrivals, Flash Deals, Popular Bundles, etc.), and a simple routing/layout structure — ideal as a starter template for fashion or retail frontends.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Table of contents
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Repository structure](#repository-structure)
+- [Getting started](#getting-started)
+- [Development notes](#development-notes)
+- [Docker](#docker)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Features
+- Fully TypeScript React application (TSX components).
+- Componentized homepage: Hero, Flash Deals, New Arrivals, Top Picks, Services, Category sections, etc.
+- Shared layout and navigation (MainLayout, Navbar, Footer).
+- Simple route-per-page organization for home, new arrivals, and collections.
+- Vite development setup for fast HMR and builds.
+- Dockerfile included for containerized builds/deployments.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Tech stack
+- Language: TypeScript
+- Framework / Tooling: React + Vite
+- Notable libraries (examples visible in code): React Router (routing configuration), Vite (dev tooling), modern React with function components + hooks
 
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+## Repository structure
+Top-level files and directories relevant to development:
